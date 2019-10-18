@@ -26,7 +26,7 @@ ISI_ch=[];
 freq_ch=[];
 % Do peak detection on each channel
 for ch=1:64
-    [peaks_t waveforms]=peak_det_std(ch_data(ch,:)',4,-1);
+    [peaks_t waveforms]=peak_det_std(subsMean(ch,:)',4,-1);
     % Store spike time, channel and waveform
     spike_t=[spike_t;peaks_t];
     spike_c=[spike_c;ones(numel(peaks_t),1).*ch];
